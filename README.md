@@ -1,26 +1,39 @@
 # VexoPay SDK
+[![Versão do NPM](https://img.shields.io/npm/v/@vexopay/sdk.svg)](https://npmjs.org/@vexopay/sdk)
 
-Essa é um SDK que facilita o uso da API da [VexoPay](https://vexopay.com.br/docs). 
+## Pré-requisitos
+- Versão do Node.js **MAIOR OU IGUAL À** `20.0.0`
+- Conta ativa na [VexoPay](https://vexopay.com.br/)
 
-Como instalar a lib?
-Use:
-```sh
+## Recursos
+- Criar cobranças PIX
+- Criar cobranças CRYPTO
+- Verificar status das cobranças (ambos os tipos)
+- E muito mais!
+
+## Segurança
+- **NUNCA** coloque suas credenciais (Chave Secret, Chave ID) no **front-end**, sempre coloque num arquivo `.env` ou em um lugar seguro fora do front-end!
+
+> [!INFO]
+> O SDK usa a [documentação oficial da VexoPay](httos://vexopay.com.br/docs) para fazer requisições, valores, entre outros.
+
+Para instalar o SDK use 
+```bash
 npm i @vexopay/sdk
 ```
 
-Como criar uma cobrança PIX?
-```js
-import { VexoPay } from "@vexopay/sdk"
+Como criar uma cobrança PIX
+```ts
+import {VexoPay} from "@vexopay/sdk"
 
-const vexopay = new VexoPay("vx_cs_SUA_CHAVE_SECRET_AQUI", "vx_ci_SUA_CHAVE_ID_AQUI")
+const vxpay = new VexoPay("vx_cs_SEU_SECRET_AQUI", "vx_ci_SEU_OD_AQUI")
 
-const cobrancapixteste = vexopay.pix.create(10.00, "João da Silva", "51523245400", "Cobrança teste")
+const cobranca = await vxpay.pix.create(10.00, "João da Silva", 51211916599, "Teste") //Valor, nome do pagador, CPF do pagador, descrição da cobrança (OPCIONAL)
 
-cobrancapixteste // Retorna e cria a cobrança via PIX
+console.log(cobranca) // Mostra a resposta da API em JSON.
 ```
 
-A lib "@vexopay/sdk" foi permitida pela VexoPay ser enviada, feita e publicada como a lib OFICIAL da VexoPay. Qualquer outra lib que fale que é "oficial" ou que não é da organização "@vexopay" não é oficial.
+> [!WARNING]
+> Os valores `payer_name` (nome do pagador) e `payer_document` (CPF do pagador) não precisam ser verídicos e/ou válidos!
 
-Joaodacarrossa ©
-
-VexoPay ©
+Esse é um SDK **OFICIAL** da VexoPay.
