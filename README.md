@@ -14,7 +14,7 @@
 ## Segurança
 - **NUNCA** coloque suas credenciais (Chave Secret, Chave ID) no **front-end**, sempre coloque num arquivo `.env` ou em um lugar seguro fora do front-end!
 
-> [!INFO]
+> [!NOTE]
 > O SDK usa a [documentação oficial da VexoPay](httos://vexopay.com.br/docs) para fazer requisições, valores, entre outros.
 
 Para instalar o SDK use 
@@ -33,7 +33,7 @@ const cobranca = await vxpay.pix.create(10.00, "João da Silva", 51211916599, "T
 console.log(cobranca) // Mostra a resposta da API em JSON.
 ```
 
-> [!WARNING]
+> [!NOTE]
 > Os valores `payer_name` (nome do pagador) e `payer_document` (CPF do pagador) não precisam ser verídicos e/ou válidos!
 
 Esse é um SDK **OFICIAL** da VexoPay.
