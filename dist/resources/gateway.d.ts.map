@@ -1,0 +1,1 @@
+{"version":3,"file":"gateway.d.ts","sourceRoot":"","sources":["../../src/resources/gateway.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,wBAAwB,CAAC;AAGzD,qBAAa,OAAO;IAEZ,OAAO,CAAC,QAAQ,CAAC,UAAU;IAD/B,YACqB,UAAU,EAAE,UAAU,EACxC;IAEH;;;OAGG;IACG,OAAO,iBAEZ;CACJ"}
